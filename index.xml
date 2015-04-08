@@ -1,13 +1,16 @@
 <craft>
-    <parameter name="length" type="int" default="3,5,6"/>
-    <parameter name="angle" type="int" default="90,45,45"/> 
+    <parameter name="length" type="string" default="3,5,6"/>
+    <parameter name="angle" type="string" default="90,45,45"/> 
     <script type="text/openjscad">
         function main(params){
 
             if(params.length != none){
-                var a = params[0]
-                    ,b = params[1]
-                    ,c = params[2]
+                
+                var lens = params.length.split(',')
+
+                var a = lens[0]
+                    ,b = lens[1]
+                    ,c = lens[2]
 
                 var p1 = {
                     x: 0,
