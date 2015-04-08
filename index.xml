@@ -4,10 +4,10 @@
     <script type="text/openjscad">
         function main(params){
 
-            if(params.length != none){
+            if(params.length){
                 
                 var lens = params.length.split(',')
-
+console.log(lens)
                 var a = lens[0]
                     ,b = lens[1]
                     ,c = lens[2]
