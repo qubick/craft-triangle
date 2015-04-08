@@ -1,0 +1,38 @@
+<craft>
+    <parameter name="length" type="int" default="3,5,6"/>
+    <parameter name="angle" type="int" default="90,45,45"/> 
+    <script type="text/openjscad">
+        function main(params){
+
+            if(params.length != none){
+                var a = params[0]
+                    ,b = params[1]
+                    ,c = params[2]
+
+                var p1 = {
+                    x: 0,
+                    y: 0
+                }, p2 = {
+                    x: a,
+                    y: 0
+                }, p3 = { //initialization
+                    x: 0,
+                    y: 0
+                }
+
+                var deno = b*b - c*c + a*a
+                    ,nomi = 2*a
+                p3.x = deno/nomi
+                p3.y = Math.sqrt(b*b - (p3.x*p3.x))
+
+                console.log(p3.x, p3.y)
+
+                var triangle = rectangular_extrude([[p1.x, p1.y],[p2.x,p2.y],[p3.x,p3.y]],  // path is an array of 2d coords
+                                                    {w: 0.1, h: 3, closed: true});
+            }
+            return triangle;
+        }//end of main
+        
+
+    </script>
+</craft>
