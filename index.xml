@@ -33,7 +33,7 @@ console.log(lens)
                 var triangle = rectangular_extrude([[p1.x, p1.y],[p2.x,p2.y],[p3.x,p3.y]],  // path is an array of 2d coords
                                                     {w: 0.1, h: 3, closed: true});
             }
-            return triangle.scale([2,2,2]);
+            return triangle.scale([10,10,10]);
         }//end of main
         
 
